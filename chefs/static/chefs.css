@@ -145,4 +145,13 @@ border-color: transparent;
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.responsive-image{
+        height:180px;
+        width:190px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+
+    }
+
 

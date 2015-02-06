@@ -6,6 +6,12 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 from django.conf import settings
 
+
+
+from django.views.generic.base import TemplateView
+from contact.forms import ContactForm
+from contact.views import sendmail
+from views import *
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -22,6 +28,8 @@ if settings.DEBUG:
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
         url(r'^success/$','chefs.views.success_password',name="success"),
         url(r'^contact-us/$', 'chefs.views.check', name='check'),
-
+        url(r'^email/send/$', sendmail),
+        url(r'^email/thankyou/$', TemplateView.as_view(template_name='thankyou.html'), name='thankyou'),
+        url(r'^email/$', TemplateView.as_view(template_name='check.html'), name='check'),
 
         ) + staticfiles_urlpatterns() + urlpatterns  # NOQA

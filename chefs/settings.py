@@ -33,6 +33,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 
+#for mail getway setting
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'nescodeindia@gmail.com'
+EMAIL_HOST_PASSWORD = 'nescode@2014'
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+
 
 
 
@@ -139,7 +149,8 @@ INSTALLED_APPS = (
     'djangocms_video',
     'south',
     'reversion',
-    'chefs'
+    'chefs',
+    'contact',
 )
 
 LANGUAGES = (
